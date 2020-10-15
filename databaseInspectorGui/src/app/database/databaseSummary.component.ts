@@ -9,13 +9,9 @@ import { IDatabase } from './database.interface';
 
 export class DatabaseSummaryComponent implements OnInit {
     public databasesToDisplay: IDatabase[];
-    constructor(private databaseService: DatabaseInspectorService) {}
+    constructor(public databaseService: DatabaseInspectorService) {}
 
     ngOnInit() {
-        this.getDatabaseList();
-    }
-
-    getDatabaseList() {
-        this.databaseService.retrieveDatabaseList().subscribe((databasesToDisplay: IDatabase[]) => this.databasesToDisplay);
+        this.databaseService.retrieveDatabaseList().subscribe((data: IDatabase[]) => this.databasesToDisplay = data);
     }
 }
