@@ -1,6 +1,7 @@
 export interface IInstance {
     serverName: string,
     instanceName: string,
+    instanceType: string,
     isClustered: string,
     version: string,
     dataDirectory: string
